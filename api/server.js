@@ -9,5 +9,15 @@ const projectsRouter = require('./projects/projects-router');
 server.use(express.json());
 server.use('/api/actions', actionsRouter);
 server.use('/api/projects', projectsRouter);
+server.use('*', (req, res) => {
+    res.status(404).send(`
+        <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;width:25%;margin:auto;padding:20px;border:2px solid black;">
+            <h1>Error 404: Page not Found</h1>
+            <p>Sorry, but it seems that ${req.params.url} is not built out.</p>
+            <a href='/api/actions'>Click Here for Actions</a>
+            <a href='/api/projects'>Click Here for Projects</a>
+        </div>
+    `)
+})
 
 module.exports = server;
