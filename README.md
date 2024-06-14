@@ -29,7 +29,7 @@ A _"resetdb"_ script exists that allows you to reset the database to its origina
 
 ### Task 2: Consume Environment Variables
 
-- [ ] Bring the port number from the `process.env` variable, falling back to `9000` if `process.env.PORT` is undefined **!!!**
+- [x] Bring the port number from the `process.env` variable, falling back to `9000` if `process.env.PORT` is undefined **!!!**
 
 ### Task 3: Build Endpoints
 
